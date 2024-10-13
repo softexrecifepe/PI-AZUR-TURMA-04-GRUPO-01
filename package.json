@@ -1,0 +1,25 @@
+{
+  "name": "grupo1_Turma4_Azur",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/softexrecifepe/grupo1_Turma4_Azur",
+  "author": "ramgund <vtwolmer9@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --exec ts-node ./src/index.ts",
+    "migration:generate": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:generate ./src/migrations/default",
+    "migration:run": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:run",
+    "build": "rm -rf ./dist && tsc",
+    "start": "node ./dist/index.js"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mysql2": "^3.11.3",
+    "nodemon": "^3.1.7",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.20"
+  }
+}
