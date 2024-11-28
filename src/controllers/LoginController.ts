@@ -20,7 +20,7 @@ export class LoginController {
     const verifiyPass = await bcrypt.compare(password, user.password);
 
     if (!verifiyPass) {
-      throw new BadRequestError("Login ou senha inválidos!");
+      res.status(400).json({ message: "Login ou senha inválidos!" })
     }
 
     const tk = jwt.sign({ id: user.id }, process.env.JWT_PASS ?? "", {
